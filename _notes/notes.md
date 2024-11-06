@@ -179,10 +179,7 @@ Então pra isso acontecer, pra de verdade se sentir completamente competente, n�
 ## Configurar o EditorConfig
 
 O EditorConfig é um Configurador de Editor e por ele a gente vai definir regras fundamentais de como o seu Editor deve se comportar como, por exemplo, qual a largura da indentação do código, se será uma indentação mais curta ou mais comprida e se nela deve usar o caractere de espaço ou tab. Mas importante destacar que essas regras irão acontecer antes de você salvar um arquivo.
-<<<<<<< HEAD
 
 ## Configurar o Prettier
 
 Prettier é um formatador de código opinativo. Ele impõe um estilo consistente analisando seu código e reimprimindo-o com suas próprias regras que levam em consideração o comprimento máximo da linha, encapsulando o código quando necessário.
-=======
->>>>>>> 766cc489d2ed6f436f233e399c427f45b274643e

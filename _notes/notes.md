@@ -3,12 +3,13 @@
 ## Pista Lenta - Protocolos e rodando o site de forma local
 
 Existem diversos protocolos e com diferentes objetivos, alguns exemplos:
-  * HTTP - HyperText Transfer Protocol
-  * FTP - File Transfer Protocol
-  * SMTP - Simple Mail Transfer Protocol
-  * UDP - User Datagram Protocol
 
-Os protocolos definem um acordo conhecido entre duas partes e como devem se comunicar. Na comunicação entre os protocolos pode ocorrer erros e perda de pacotes, mas existem meios de tentar recuperar esses pacotes perdidos. 
+- HTTP - HyperText Transfer Protocol
+- FTP - File Transfer Protocol
+- SMTP - Simple Mail Transfer Protocol
+- UDP - User Datagram Protocol
+
+Os protocolos definem um acordo conhecido entre duas partes e como devem se comunicar. Na comunicação entre os protocolos pode ocorrer erros e perda de pacotes, mas existem meios de tentar recuperar esses pacotes perdidos.
 
 Existem casos que você quer saber se a informação chegou no ponto final e outros momentos que não é preciso saber disso, por exemplo, na chamada de vídeo onde você pode perder um pedaço da informação mas não tem problema. UDP é um tipo de protocolo que não precisa de uma confirmação de recebimento, é um pacote autocontido, o que é diferente do TCP.
 
@@ -17,37 +18,41 @@ Vídeo da diferença entre o protocolo UDP e TCP [HTML5 Games - UDP vs TCP](http
 ## Pista Lenta - Página inicial
 
 O NextJs faz um roteamento baseado em arquivos, conhecido como File-Based Routing, foi inspirado como o PHP faz as rotas.
-Ao adicionar um arquivo chamado index.js/index.ts na pasta pages, ele automaticamente vira uma rota, por exemplo: 
-  * pages/index.js ---> / (diretório real)
-  * pages/produtos/index.js ---> /produtos (pasta)
-  * recuperar-senha.js ---> /recuperar-senha (arquivo)
+Ao adicionar um arquivo chamado index.js/index.ts na pasta pages, ele automaticamente vira uma rota, por exemplo:
+
+- pages/index.js ---> / (diretório real)
+- pages/produtos/index.js ---> /produtos (pasta)
+- recuperar-senha.js ---> /recuperar-senha (arquivo)
 
 Responsabilidade do Next e do React. React vai entregar os objetos concretos, como os componentes visuais, o Next vai fazer o roteamento desses arquivos
 
-## Pista Rápida: Dia 05 
-O Git funciona com versionamento distribuído. Ponto importante, o Git não salva somente as diferenças entre os arquivos que nem o CVS, por isso ele é mais rápido, porque não há necessidade de processar arquivos antigos para chegar no atual, mas acaba ocupando mais espaço. 
+## Pista Rápida: Dia 05
+
+O Git funciona com versionamento distribuído. Ponto importante, o Git não salva somente as diferenças entre os arquivos que nem o CVS, por isso ele é mais rápido, porque não há necessidade de processar arquivos antigos para chegar no atual, mas acaba ocupando mais espaço.
 
 Resumindo, o Git faz uma copia (foto) inteira do arquivo que foi modificado e salva ele como um BLOB (Binary Large OBject), e adiciona um identificador. Caso você altere este arquivo ele cria uma nova cópia e adiciona um novo identificador e se um outro arquivo não foi modificado ele só faz um apontamento para o arquivo não modificado. O Git não armazena o diff, ele faz um cálculo para obter a diferença entre os arquivos.
 
 ![representação do versionamento do Git](./_img/git.png)
 
 ### Comandos:
-  * git log - listar os commits do repositório.
-  * git add - sobe alterações para a staging area.
-  * git commit - realiza novos commits.
-  * git commit --amend - substitui o commit anterior por um novo, mas aproveita as alterações dele.
-  * git diff - calcula a diferença entre as versões/alterações dos arquivos.
-  * git commit --amend - modifica um commit já feito. Ele cria um novo identificador para o commit.
+
+- git log - listar os commits do repositório.
+- git add - sobe alterações para a staging area.
+- git commit - realiza novos commits.
+- git commit --amend - substitui o commit anterior por um novo, mas aproveita as alterações dele.
+- git diff - calcula a diferença entre as versões/alterações dos arquivos.
+- git commit --amend - modifica um commit já feito. Ele cria um novo identificador para o commit.
 
 ## Pista Rápida: Dia 6
 
-Ao utilizar um git amend para substituir um commit que já foi para o repositório remoto, ele vai da um erro ao fazer o push, pois vai sobrescrever o hash do commit, sendo necessário fazer um pull para resolver o problema. Commits são imutáveis 
+Ao utilizar um git amend para substituir um commit que já foi para o repositório remoto, ele vai da um erro ao fazer o push, pois vai sobrescrever o hash do commit, sendo necessário fazer um pull para resolver o problema. Commits são imutáveis
 
 ### Comandos:
-  * git commit -m "mensagem" - atalho para fazer novos commits.
-  * git push - empurrar alterações locais para o origin.
-  * git push --force - empurrar de forma forçada alterações locais para o origin.
-  * git push -f - a forma comprimida do comando anterior.
+
+- git commit -m "mensagem" - atalho para fazer novos commits.
+- git push - empurrar alterações locais para o origin.
+- git push --force - empurrar de forma forçada alterações locais para o origin.
+- git push -f - a forma comprimida do comando anterior.
 
 ## Pista Rápida: Dia 7
 
@@ -65,11 +70,12 @@ Principle of Least Privilege (Princípio do Menor Privilégio ), para uma maior 
 
 ## Programação "Orgânica" versus "Impressora 3D"
 
-* O que é Over Engineering?
-  * Over Engineering é um termo utilizado para descrever um projeto que é mais complexo do que o necessário para resolver o problema que ele se propõe a resolver. 
+- O que é Over Engineering?
 
-* O que é Feature Creep?
-  * O Feature Creep, também conhecido como inchaço de recursos, é uma situação em que seu site tem muitos recursos, dificultando o uso e a navegação dos visitantes.
+  - Over Engineering é um termo utilizado para descrever um projeto que é mais complexo do que o necessário para resolver o problema que ele se propõe a resolver.
+
+- O que é Feature Creep?
+  - O Feature Creep, também conhecido como inchaço de recursos, é uma situação em que seu site tem muitos recursos, dificultando o uso e a navegação dos visitantes.
 
 ## Por que meus projetos sempre dão certo?
 
@@ -77,11 +83,11 @@ O Lixo de um é o tesouro do outro. Prestar atenção que o seu tesouro pode nã
 
 ## Pista Rápida: Dia 9
 
-## Qual o “segredo” para organização de tarefas? 
+## Qual o “segredo” para organização de tarefas?
 
-* Fazer muito com pouco e não pouco com muito... esse é um dos segredos que eu percebi quando o assunto é organização de tarefas.
+- Fazer muito com pouco e não pouco com muito... esse é um dos segredos que eu percebi quando o assunto é organização de tarefas.
 
-Um ponto importante que o Filipe comentou nessa aula é sobre anotar os objetivos e deixar elas de expostas para que possamos ver quais são as metas que precisam ser alcançadas. Isso envolve ter organização e anotação do que precsia ser feito, como um to-do list. Existem atividades que serão mais ou menos custosas de serem feitas e é importante usar uma abordagem que sempre possamos ter um saldo positivo ao realizar elas. 
+Um ponto importante que o Filipe comentou nessa aula é sobre anotar os objetivos e deixar elas de expostas para que possamos ver quais são as metas que precisam ser alcançadas. Isso envolve ter organização e anotação do que precsia ser feito, como um to-do list. Existem atividades que serão mais ou menos custosas de serem feitas e é importante usar uma abordagem que sempre possamos ter um saldo positivo ao realizar elas.
 
 ![modelo mental](./_img/modelo-mental.png)
 
@@ -140,7 +146,7 @@ Você gosta de comer pedra? Não responde ainda! 😂 Deixa eu falar algo antes 
 
 Deixa eu te preparar pra que, se você se pegar numa situação em que o seu cérebro está tentando negociar com você um "tudo ou nada", por exemplo: "ou programa o sistema inteiro que você quer fazer nesse final de semana ou não faz nada" é porque ele quer que você faça nada... sabe por que? A resposta está na aula.
 
-Não existe só o caminho, fazer tudo ou fazer nada. Podemos fazer pouco a pouco, ganhando pouca "recompensa". 
+Não existe só o caminho, fazer tudo ou fazer nada. Podemos fazer pouco a pouco, ganhando pouca "recompensa".
 
 Quebra as pedras (entendesse como ideia) em pedaços menores que sejam mais paupáveis. As primeiras marretadas para quebrar a pedra, quebram elas em pedaços não são uniformes e esses pedaços são imprevisiveis, difíceis de serem consumidos.
 
@@ -148,11 +154,11 @@ Quebra as pedras (entendesse como ideia) em pedaços menores que sejam mais paup
 
 Nesta Pista Lenta iremos criar tanto a Milestone 0: Em construção, quanto as 3 Issues abaixo:
 
-* Colocar o site num domínio .com.br
-* Definir estilização do código e configurar editor
-* Programar página de "Em construção"
+- Colocar o site num domínio .com.br
+- Definir estilização do código e configurar editor
+- Programar página de "Em construção"
 
-Fora conversar sobre a mecânica do neurotransmissor mais importante quando o assunto é se sentir motivado a iniciar, continuar e concluir tarefas: 
+Fora conversar sobre a mecânica do neurotransmissor mais importante quando o assunto é se sentir motivado a iniciar, continuar e concluir tarefas:
 
 ![Estágios da dopamina](./_img/estagios-dopamina.png)
 
@@ -169,3 +175,7 @@ Então pra isso acontecer, pra de verdade se sentir completamente competente, n�
 ## Uma história macabra sobre "Estilização de Código"
 
 É importante manter sempre um estilo de código para termos padronização no código. Para isso podemos utilizar algumas ferramentas para isso como [EditorConfig](https://editorconfig.org/), dependendo do projeto podemos ter vários programadores e cada um com seu estilo de codar, assim o projeto pode ficar bagunçado e sem padrão.
+
+## Configurar o EditorConfig
+
+O EditorConfig é um Configurador de Editor e por ele a gente vai definir regras fundamentais de como o seu Editor deve se comportar como, por exemplo, qual a largura da indentação do código, se será uma indentação mais curta ou mais comprida e se nela deve usar o caractere de espaço ou tab. Mas importante destacar que essas regras irão acontecer antes de você salvar um arquivo.

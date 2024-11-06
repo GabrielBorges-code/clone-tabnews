@@ -1,2 +1,5 @@
 # clone-tabnews
-Implementação do https://www.tabnews.com.br para o curso https://curso.dev
+
+Implementação do https://www.tabnews.com.br para o curso https://curso.dev.
+
+Minhas anotações: [notes](./_notes/notes.md).

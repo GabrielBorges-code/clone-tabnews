@@ -294,3 +294,11 @@ Arquitetura de Software não está ligada diretamente a organização de pastas,
 ## 🚗 Pista Rápida: Dia 15
 
 Eu não to brincando quando eu falo que o Dia 15 pode mudar de verdade a sua vida na programação, isso porque ela ficou reservada para falar sobre Testes Automatizados e que é um tema que, se você engata, se você entende os benefícios e usa pra programar de uma forma melhor e mais despreocupada, muda completamente o seu fluxo de trabalho e é um caminho sem volta... sem volta mesmo!
+
+Texto complementar sobre teste [Testes automatizados: saiba o que são, como e porquê usar!](https://blog.betrybe.com/tecnologia/teste-automatizados/)
+
+## Instalar um Test Runner
+
+Um Test Runner nada mais que um código que testa outro código. Serve para testar de forma automátizada o trabalho que uma pessoa faria, por exemplo um cadastro com e-mail inválido, depois válido e em seguida tentar cadastrar com o mesmo email, etc. Se cadastrar com o mesmo e-mail e retornar erro, é um erro esperado, etc. Verifica se uma parte do sistema está funcionando de forma correta. Caso se uma das condições esperadas não são atendidas, como por exemplo o sucesso ao cadastrar com um email duplicado, isso é uma falha.
+
+Isso válida que iremos por um sistema no ar sem REGRESSÃO.

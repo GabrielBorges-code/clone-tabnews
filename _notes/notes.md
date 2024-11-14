@@ -299,6 +299,28 @@ Texto complementar sobre teste [Testes automatizados: saiba o que são, como e p
 
 ## Instalar um Test Runner
 
-Um Test Runner nada mais que um código que testa outro código. Serve para testar de forma automátizada o trabalho que uma pessoa faria, por exemplo um cadastro com e-mail inválido, depois válido e em seguida tentar cadastrar com o mesmo email, etc. Se cadastrar com o mesmo e-mail e retornar erro, é um erro esperado, etc. Verifica se uma parte do sistema está funcionando de forma correta. Caso se uma das condições esperadas não são atendidas, como por exemplo o sucesso ao cadastrar com um email duplicado, isso é uma falha.
+Um Test Runner nada mais que um código que testa outro código. Serve para testar de forma automatizada o trabalho que uma pessoa faria, por exemplo um cadastro com e-mail inválido, depois válido e em seguida tentar cadastrar com o mesmo email, etc. Se cadastrar com o mesmo e-mail e retornar erro, é um erro esperado, etc. Verifica se uma parte do sistema está funcionando de forma correta. Caso se uma das condições esperadas não sejam atendidas, como por exemplo o sucesso ao cadastrar com um email duplicado, isso é uma falha.
 
 Isso válida que iremos por um sistema no ar sem REGRESSÃO.
+
+## Criar um "Teste de Teste"
+
+Nos testes automatizados é possível criar a feature e depois testar, mas o ideal é criar o teste para depois criar a feature.
+
+Um teste pode se dizer que temos dois lados, na esquerda é um valor dinâmico, na direita o valor esperado pode ser hardcoded, inclusive é aconselhável que seja hardcoded.
+
+![Teste automatizado](./_img/first-test.png)
+
+## Criar um "Teste de Verdade"
+
+Um teste não tem a capacidade de afirmar que um código está funcionando, ele tem a capacidade de afirmar que algo aconteceu ou não. Ele serve para montar cenários para testar a implementação por vários ângulos. Não seja "fofo" ao criar cenários de testes, o intuito não é só escrever códigos que passam pelo caminho feliz, tenha o contrário.
+
+Um teste pode servir como uma documentação do sistema, pois ele roda um cenário real. Jà um documentação externa pode ficar desatualizado. O teste deve cobrir todas as variações de entrada.
+
+O TDD (Test Driven Development / Desenvolvimento Orientado a Teste), podemos traduzir isso de outra forma, Desenvolvimento Orientado Por / Pelo Testes. Os testes devem orientar o desenvolvimento. Primeiro a gente especifica no teste o que é esperado que nosso programa faça e depois escreve esse programa.
+
+Para saber mais: [TDD: o que é e por que vale pena](https://blog.betrybe.com/tecnologia/tdd-test-driven-development/)
+
+Isso pode a ajudar a ficar criativo, pois podemos pensar em cenários diversos que o usuário está.
+
+Não nessariamente as pessoas semprem escrevem o código com TDD. Pode ter ocasiões, por exemplo, de quando a pessoa está cansada e só faz a feature e depois ele vai aplicar o teste. O teste é uma malha de proteção para o sistema.

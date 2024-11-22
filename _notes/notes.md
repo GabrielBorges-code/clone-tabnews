@@ -30,7 +30,7 @@ Responsabilidade do Next e do React. React vai entregar os objetos concretos, co
 
 O Git funciona com versionamento distribuído. Ponto importante, o Git não salva somente as diferenças entre os arquivos que nem o CVS, por isso ele é mais rápido, porque não há necessidade de processar arquivos antigos para chegar no atual, mas acaba ocupando mais espaço.
 
-Resumindo, o Git faz uma cópia (foto) inteira do arquivo que foi modificado e salva ele como um BLOB (Binary Large OBject), e adiciona um identificador. Caso você altere este arquivo ele cria uma nova cópia e adiciona um novo identificador e se um outro arquivo não foi modificado ele só faz um apontamento para o arquivo não modificado. O Git não armazena o diff, ele faz um cálculo para obter a diferença entre os arquivos.
+Resumindo, o Git faz uma cópia (foto) inteira do arquivo que foi modificado e salva ele como um BLOB (Binary Large Object), e adiciona um identificador. Caso você altere este arquivo ele cria uma nova cópia e adiciona um novo identificador e se um outro arquivo não foi modificado ele só faz um apontamento para o arquivo não modificado. O Git não armazena o diff, ele faz um cálculo para obter a diferença entre os arquivos.
 
 ![representação do versionamento do Git](./_img/git.png)
 
@@ -144,7 +144,7 @@ Carga adicional que serve mais para o gestor que para ela;
 
 Você gosta de comer pedra? Não responde ainda! 😂 Deixa eu falar algo antes 🤝
 
-Deixa eu te preparar pra que, se você se pegar numa situação em que o seu cérebro está tentando negociar com você um "tudo ou nada", por exemplo: "ou programa o sistema inteiro que você quer fazer nesse final de semana ou não faz nada" é porque ele quer que você faça nada... sabe por que? A resposta está na aula.
+Deixa eu te preparar para que, se você se pegar numa situação em que o seu cérebro está tentando negociar com você um "tudo ou nada", por exemplo: "ou programa o sistema inteiro que você quer fazer nesse final de semana ou não faz nada" é porque ele quer que você faça nada... sabe por que? A resposta está na aula.
 
 Não existe só o caminho, fazer tudo ou fazer nada. Podemos fazer pouco a pouco, ganhando pouca "recompensa".
 
@@ -190,7 +190,7 @@ DNS (Domain Name System) converte o domínio em um endereço IP.
 
 ![Tabela de DNS](./_img/dns-table.png)
 
-O fluxo de acesso ao um servidor dns pode ser exibido da seguinte forma, porém a mecânica dele não funciona. Porque quem acessa realmente o servidor é o cliente (pc de acesso) não o servidor de DNS. O servidor DNS só traduz o domínio.
+O fluxo de acesso ao servidor dns pode ser exibido da seguinte forma, porém a mecânica dele não funciona. Porque quem acessa realmente o servidor é o cliente (pc de acesso) não o servidor de DNS. O servidor DNS só traduz o domínio.
 
 Fluxo de acesso ao servidor DNS:
 ![fluxo de acesso](./_img/access-flow.png)
@@ -223,7 +223,7 @@ Foi configurado um domínio e foi apontando para o servidor de dns da Vercel [me
 ...
 Em paralelo a isto, eu apresento a Ideia McDonalds e mostro como eu usei ela para destravar o desenvolvimento de times em situações da vida real e também para conseguir destravar as minhas próprias ideias 🤝
 ...
-Ideia MC Donalds ou teoria MC Donalds ela ajuda a destravar e engajar alguma ideia. Ao estar em uma equipe tentando ter uma ideia e as pessoas não conseguem fluir, é sugerido algo bizarro, sem compromisso, isso acaba dando um ponta pé inicial. Ao dar uma ideia "ruim" seu próprio cerebro irá produzir outras ideias para se afastar da ideia ruim. Isso serve ao estar em uma equipe, quanto estiver só
+Ideia MC Donalds ou teoria MC Donalds ela ajuda a destravar e engajar alguma ideia. Ao estar em uma equipe tentando ter uma ideia e as pessoas não conseguem fluir, é sugerido algo bizarro, sem compromisso, isso acaba dando um ponta pé inicial. Ao dar uma ideia "ruim" seu próprio cérebro irá produzir outras ideias para se afastar da ideia ruim. Isso serve ao estar em uma equipe, quanto estiver só
 
 ## Não confie em nenhum serviço 🛑
 
@@ -293,7 +293,7 @@ Arquitetura de Software não está ligada diretamente a organização de pastas,
 
 ## 🚗 Pista Rápida: Dia 15
 
-Eu não to brincando quando eu falo que o Dia 15 pode mudar de verdade a sua vida na programação, isso porque ela ficou reservada para falar sobre Testes Automatizados e que é um tema que, se você engata, se você entende os benefícios e usa pra programar de uma forma melhor e mais despreocupada, muda completamente o seu fluxo de trabalho e é um caminho sem volta... sem volta mesmo!
+Eu não to brincando quando eu falo que o Dia 15 pode mudar de verdade a sua vida na programação, isso porque ela ficou reservada para falar sobre Testes Automatizados e que é um tema que, se você engata, se você entende os benefícios e usa para programar de uma forma melhor e mais despreocupada, muda completamente o seu fluxo de trabalho e é um caminho sem volta... sem volta mesmo!
 
 Texto complementar sobre teste [Testes automatizados: saiba o que são, como e porquê usar!](https://blog.betrybe.com/tecnologia/teste-automatizados/)
 
@@ -301,7 +301,7 @@ Texto complementar sobre teste [Testes automatizados: saiba o que são, como e p
 
 Um Test Runner nada mais que um código que testa outro código. Serve para testar de forma automatizada o trabalho que uma pessoa faria, por exemplo um cadastro com e-mail inválido, depois válido e em seguida tentar cadastrar com o mesmo email, etc. Se cadastrar com o mesmo e-mail e retornar erro, é um erro esperado, etc. Verifica se uma parte do sistema está funcionando de forma correta. Caso se uma das condições esperadas não sejam atendidas, como por exemplo o sucesso ao cadastrar com um email duplicado, isso é uma falha.
 
-Isso válida que iremos por um sistema no ar sem REGRESSÃO.
+É válido que iremos por um sistema no ar sem REGRESSÃO.
 
 ## Criar um "Teste de Teste"
 
@@ -313,14 +313,80 @@ Um teste pode se dizer que temos dois lados, na esquerda é um valor dinâmico, 
 
 ## Criar um "Teste de Verdade"
 
-Um teste não tem a capacidade de afirmar que um código está funcionando, ele tem a capacidade de afirmar que algo aconteceu ou não. Ele serve para montar cenários para testar a implementação por vários ângulos. Não seja "fofo" ao criar cenários de testes, o intuito não é só escrever códigos que passam pelo caminho feliz, tenha o contrário.
+Um teste não tem a capacidade de afirmar que um código está funcionando, ele tem a capacidade de afirmar se algo aconteceu ou não. Ele serve para montar cenários para testar a implementação por vários ângulos. Não seja "fofo" ao criar cenários de testes, o intuito não é só escrever códigos que passam pelo caminho feliz, tenha o contrário.
 
-Um teste pode servir como uma documentação do sistema, pois ele roda um cenário real. Jà um documentação externa pode ficar desatualizado. O teste deve cobrir todas as variações de entrada.
+Um teste pode servir como uma documentação do sistema, pois ele roda um cenário real. Já um documento externo pode ficar desatualizado. O teste deve cobrir todas as variações de entrada.
 
-O TDD (Test Driven Development / Desenvolvimento Orientado a Teste), podemos traduzir isso de outra forma, Desenvolvimento Orientado Por / Pelo Testes. Os testes devem orientar o desenvolvimento. Primeiro a gente especifica no teste o que é esperado que nosso programa faça e depois escreve esse programa.
+O TDD (Test Driven Development / Desenvolvimento Orientado a Teste), podemos traduzir isso de outra forma, Desenvolvimento Orientado Por / Pelo Testes. Os testes devem orientar o desenvolvimento. Primeiro a gente específica no teste o que é esperado que nosso programa faça e depois escreve esse programa.
 
 Para saber mais: [TDD: o que é e por que vale pena](https://blog.betrybe.com/tecnologia/tdd-test-driven-development/)
 
 Isso pode a ajudar a ficar criativo, pois podemos pensar em cenários diversos que o usuário está.
 
-Não nessariamente as pessoas semprem escrevem o código com TDD. Pode ter ocasiões, por exemplo, de quando a pessoa está cansada e só faz a feature e depois ele vai aplicar o teste. O teste é uma malha de proteção para o sistema.
+Não necessariamente as pessoas sempre escrevem o código com TDD. Pode ter ocasiões, por exemplo, de quando a pessoa está cansada e só faz a feature e depois ele vai aplicar o teste. O teste é uma malha de proteção para o sistema.
+
+## 🚗 Pista Rápida: Dia 16
+
+Comentário lgalvani:
+
+- Testes unitários: Esses testes focam em componentes individuais, como funções ou métodos, garantindo que cada pequena parte do sistema funcione corretamente de forma isolada.
+
+- Testes de integração: Depois que os componentes individuais funcionam, é hora de verificar se eles funcionam corretamente juntos. Componentes individuais que passaram nos testes unitários podem falhar totalmente quando são integrados, geralmente devido a falhas de comunicação de dados. Os testes de integração garantem que os dados fluam corretamente entre os módulos e que as interfaces sejam sólidas.
+
+- Testes E2E: Os testes ponta a ponta validam toda a aplicação, desde a interface do usuário até o back-end, garantindo que o sistema funcione como um todo. Esses testes proporcionam alta confiança no atendimento aos requisitos de negócios, mas são mais lentos e complexos. Por causa disso, eles devem ser limitados a fluxos de trabalho críticos para evitar instabilidade.
+
+## A maior briga no universo dos Testes Automatizados
+
+Testes Automatizados é um assunto tão importante quanto ele é passível de gerar briga na internet e nessa aula eu vou mostrar o motivo. É muito importante você estar preparado para esse tipo de discussão, principalmente sobre a diferença entre testes `unitários`, `integração` e `e2e` 💪.
+
+A ordem dos testes importa! Esse é um norte padrão de quantidade de testes que seu sistema deve ter junto com a representação de quantidade de teste
+
+Pirâmide que norteia ![Pirâmide de teste](./_img/pyramid-test.png)
+
+Mas existe a discussão sobre outros modelos de teste conforme o exemplo abaixo:
+X do usuário @swyx
+
+![twitter](./_img/twitter.png)
+
+![Teste troféu](./_img/test-trophy.png)
+
+![Teste favo de mel](./_img/test-honeycomb.png)
+
+Novo termo API First: Significa que tudo que um cliente consiga fazer no sistema, disponibilizar isso primeiro através da API Rest.
+
+## Encostando a mão no Protocolo HTTP 🔥
+
+Endpoint (ponto final), é o local final onde uma requisição vai chegar. Tudo basicamente pode ser definido com um endpoint, por exemplo `google.com`, porém esse termo é utilizado no contexto de API (Application Programming Interface / Interface de Programação de Aplicações).
+
+Tudo pode ser interpretado como interface, e as interfaces podem ser um CLI, uma página na web, uma função, o microondas possui uma interface, tudo que interagimos temos um interface.
+
+Tipos de interfaces:
+
+- TUI: Text-based User Interface / Interface de Usuário baseado em texto (utilizado em terminal).
+- GUI: Graphical User Interface / Interface de Usuário Gráfica (comumente a mais utilizada por usuário em geral).
+
+No Next é também é possível criar os end-points através do File-based routing.
+
+CURL é um Client URL de terminal. Exemplo de chamada do curl no terminal!
+
+[curl](./_img/curl.png)
+
+as setas com o sinal de maior `>` representa a request, já as setas com o sinal de menor representa `<` a response, o `*` são ações internas do próprio curl
+
+## Não é magia! (é Protocolo)
+
+Eu sugiro você ter um único objetivo com estas aulas mais recentes, que é acreditar que, na área de tecnologia ou na programação num geral, não existe magia... não existe mesmo! Toda informação está em algum lugar e você pode não conhecer esse lugar e naturalmente assumir que é um local mágico, mas não é.
+
+Então nesta aula nós iremos cavar um pouco mais o Protocolo HTTP na procura de informações que muitas pessoas encaram como "mágicas" 💪
+
+## Versionamento de API e Endpoint "/status"
+
+A API pode mudar, porém ela muda menos que uma interface. Quando ela precisa mudar, ela muda as informações que estão sendo desenvolvidas. Essas mudanças podem ser organizadas em duas categorias: Breaking Change e Non-breaking Change.
+
+Uma mudança Breaking Change é do tipo que pode quebrar a integração, por exemplo a interface, quebrou o contrato entre o client e o server. Exemplo: alterei um campo chamado anteriormente de nome_de_usuario para username. Isso vai quebrar, porque o código que fazia a leitura desses scripts não irá identificar o campo.
+
+Uma mudança Non-breaking Change é uma mudança que não quebra a integração, por exemplo a adição de um campo novo em um object, nenhum script deveria depender de uma informação que ainda não existe, exemplo de um objeto de pessoa { nome: "Gabriel" } eu adicionar o campo de altura { nome: "Gabriel", altura: "183" }. Mas essa situação pode ocorrer, mas não deveria, é uma convenção que a adição de novos campos não quebre a API.
+
+É possível fazer o versionamento de APIs, a estratégia mais comum existente é URI Path Versioning, onde é adicionado no endpoint a versão que vai ser utilizada e o outro método é o Header Versioning onde é adicionado no cabeçalho da requisição versão.
+
+![Versionamento API](./_img/version-api.png)

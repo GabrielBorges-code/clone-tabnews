@@ -390,3 +390,86 @@ Uma mudança Non-breaking Change é uma mudança que não quebra a integração,
 É possível fazer o versionamento de APIs, a estratégia mais comum existente é URI Path Versioning, onde é adicionado no endpoint a versão que vai ser utilizada e o outro método é o Header Versioning onde é adicionado no cabeçalho da requisição versão.
 
 ![Versionamento API](./_img/version-api.png)
+
+## 🚗 Pista Rápida: Dia 17
+
+## Qual Banco de Dados escolher?
+
+feature-proof significa a prova do futuro
+A escolha de um banco de dados deve se levar em consideração alguns pontos:
+
+- _DBMS - Data Base Management System ou SGBD - Sistema de gerenciamento de banco de dados. Exemplos de SBGD / DBMS_
+
+  - Mysql
+  - PostgreSQL
+  - Oracle Database
+  - MongoDB
+
+- Tipos de bancos:
+  - Relacional
+  - Não Relacional
+    - Armazenamento de Documentos
+    - Armazenamento Chave-Valor
+  - Série Temporal
+  - Espacial
+
+Geralmente é escolhido bancos relacional e não relacional. Vamos utilizar o PostgreSQL no banco
+
+- _Query - Consultas_
+
+  Para fazer as consultas em uma aplicação geralmente é usado um ORM (Object-Relational Mapping / Mapeamento Objeto-Relacional). Ele tenta abstrair o SQL através de métodos. Ele também abstraí a conexão com o banco e a aplicação, também ele ajuda na hora que você mudar o banco, as consultas já feitas não quebrarem. Como ORM iremos usar o pg (postgres-node).
+
+- _Migrations - Migração_
+
+  É uma forma de documentar as mudanças realizadas no banco de dados. É a forma de também de ter o controle de forma programática do banco, um tipo de versionamento, pois a alteração não foi feita de forma manual e sem documentação. E para fazer as migrações iremos usar o node-pg-migrate.
+
+## Por que o Docker dominou o mundo?
+
+![Container e virtualizador](./_img/virtualizador-container.png)
+
+## Subir Banco de Dados (Local)
+
+YAML acrônimo recursivo para “YAML Ain’t Markup Language”.
+O YAML é um super set para o JSON, mas ele parece mais com Python. Ele define a hierarquia dos elementos através da indentação, utilizando espaços em branco, ele não aceita usar o tab para fazer isso.
+
+O arquivo Dockerfile é um código fonte que define os comandos que vão formar o ambiente virtual. O Dockerfile precisa ser compilado, e ele vira uma Image, e ao executar ele se transforma em um Container é na prática uma Image que está rodando, porém é no Container que vamos nos conectar.
+
+![Dokcer File](./_img/docker-file.png)
+
+É possível subir essa Image para o Docker Hub.
+
+Segue os comandos para quem deseja instalar o Docker na máquina local:
+
+```shell
+# INSTALAR DEPENDÊNCIAS:
+sudo apt-get install  curl apt-transport-https ca-certificates software-properties-common
+
+# INSERIR CHAVE GPG:
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# ADICIONAR REPOSITÓRIO:
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+# ATUALIZAR REPOSITÓRIO:
+sudo apt update
+sudo apt upgrade
+apt-cache policy docker-ce
+
+# INSTALAR DOCKER:
+sudo apt install docker-ce
+
+# VERIFICAR STATUS:
+sudo systemctl status docker
+
+```
+
+## Se conectando no Banco de Dados (Local)
+
+Conhecer problemas também é conhecimento. Evitar problemas é evitar conhecimentos.
+
+Em protocolos http possui `Status Code` para retornar um tipo de informação, como sucesso e sem autorização, por exemplo.
+Em processos existe o `Exit Codes`, no momento que um processo é encerrado ele retorna um código que representa se a saída desse processo teve sucesso ou não na visão do processo. Por convenção a saída 0 representa sucesso, já valores acima disso podem ser problemas, por exemplo 255.
+
+Foi instalado esse client de terminal para se conectar ao Postgres durante a aula:
+
+- `sudo apt install postgresql-client`

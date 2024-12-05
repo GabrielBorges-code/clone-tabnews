@@ -473,3 +473,25 @@ Em processos existe o `Exit Codes`, no momento que um processo é encerrado ele 
 Foi instalado esse client de terminal para se conectar ao Postgres durante a aula:
 
 - `sudo apt install postgresql-client`
+
+## 🚗 Pista Rápida: Dia 18
+
+Nesta aula iremos criar o módulo database.js que é uma abstração da nossa infraestrutura e que vai ser responsável por abrir conexão com o Banco de Dados e enviar queries pra ele. Para isto, vamos instalar o módulo pg na versão 8.11.3 🤝
+
+## Criar módulo "database.js"
+
+```markdown
+E para revisar o que aconteceu, em aulas passadas decidimos utilizar o banco de dados Postgres, correto? Só que para conseguir se comunicar com ele, é preciso saber conversar no protocolo que ele conversa (e que é bem difícil de se implementar). Dado a isso, instalamos o módulo pg, pois ele sabe se comunicar nesse protocolo. Então nós utilizamos o pg para abrir uma conexão ao banco de dados e enviar uma query (um comando) contra ele e que por hora não possui nenhum dado dentro dele.
+
+E para não precisar repetir o código responsável por abrir uma conexão, enviar uma query e fechar uma conexão em todos os locais na qual precisaremos trabalhar com o banco de dados, nós criamos uma abstração chamada database.js. Com ela, basta executar o médoto database.query() que toda gestão da conexão será feita por baixo dos panos e retornar o resultado pronto para ser usado.
+```
+
+## A importância das Variáveis de Ambiente
+
+Quando eu realmente entendi o poder e a simplicidade das Variáveis de Ambiente, o meu cérebro deu alguns cliques muito importantes. Um deles foi de sempre que possível deixar a camada da aplicação stateless (sem estado) e isso se conecta perfeitamente com várias formas profissionais de se construir e escalar uma aplicação 💪
+
+## Variáveis de Ambiente no Código
+
+Qual a relação entre Variáveis de Ambiente, process, env e o que entra dentro do seu código? Vamos ver tudo isso dentro dessa aula e deixar sua aplicação 100% stateless 💪.
+
+Bizu: para não salvar códigos digitados no `bash`, basta por um espaço antes do comando que ele não fica salvo.

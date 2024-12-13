@@ -481,9 +481,9 @@ Nesta aula iremos criar o módulo database.js que é uma abstração da nossa in
 ## Criar módulo "database.js"
 
 ```markdown
-E para revisar o que aconteceu, em aulas passadas decidimos utilizar o banco de dados Postgres, correto? Só que para conseguir se comunicar com ele, é preciso saber conversar no protocolo que ele conversa (e que é bem difícil de se implementar). Dado a isso, instalamos o módulo pg, pois ele sabe se comunicar nesse protocolo. Então nós utilizamos o pg para abrir uma conexão ao banco de dados e enviar uma query (um comando) contra ele e que por hora não possui nenhum dado dentro dele.
+E para revisar o que aconteceu, em aulas passadas decidimos utilizar o banco de dados Postgres, correto? Só que para conseguir se comunicar com ele, é preciso saber conversar no protocolo que ele conversa (e que é bem difícil de se implementar). Dado isso, instalamos o módulo pg, pois ele sabe se comunicar nesse protocolo. Então nós utilizamos o pg para abrir uma conexão ao banco de dados e enviar uma query (um comando) contra ele e que por hora não possui nenhum dado dentro dele.
 
-E para não precisar repetir o código responsável por abrir uma conexão, enviar uma query e fechar uma conexão em todos os locais na qual precisaremos trabalhar com o banco de dados, nós criamos uma abstração chamada database.js. Com ela, basta executar o médoto database.query() que toda gestão da conexão será feita por baixo dos panos e retornar o resultado pronto para ser usado.
+E para não precisar repetir o código responsável por abrir uma conexão, enviar uma query e fechar uma conexão em todos os locais na qual precisaremos trabalhar com o banco de dados, nós criamos uma abstração chamada database.js. Com ela, basta executar o método database.query() que toda gestão da conexão será feita por baixo dos panos e retornar o resultado pronto para ser usado.
 ```
 
 ## A importância das Variáveis de Ambiente
@@ -495,3 +495,38 @@ Quando eu realmente entendi o poder e a simplicidade das Variáveis de Ambiente,
 Qual a relação entre Variáveis de Ambiente, process, env e o que entra dentro do seu código? Vamos ver tudo isso dentro dessa aula e deixar sua aplicação 100% stateless 💪.
 
 Bizu: para não salvar códigos digitados no `bash`, basta por um espaço antes do comando que ele não fica salvo.
+
+## 🚗 Pista Rápida: Dia 19
+
+## Foi certo fazer o commit do .env?
+
+O software deve ser semântico, desde a criação dos nomes das variáveis ao nome de variáveis de ambiente.
+
+`A semântica é o ramo da linguística que estuda o significado das palavras.`
+
+## Uma história macabra sobre "Choque Elétrico" e "TDD"
+
+Nota importante que aprendi nessa aula que nunca me toquei, nunca reparei que os imports do Node eram relativos, ou seja é necessário fazer toda a navegação para encontrar o arquivo desejado. O Node toma como base o caminho do arquivo, por exemplo:
+
+```javascript
+import database from "../../../../infra/database.js";
+```
+
+Se queremos garantir que uma mudança de um comportamento para outro, precisamos mensurar e/ou testar os dois comportamentos e não somente o estado final.
+
+O insight que eu tive é, o teste realmente está validando a mudança que eu fiz? Se não posso está deixando um erro ou bug passar sem perceber.
+
+`determinar as dimensões de ou ter por medida; medir.`
+
+## Configurar scripts dos serviços
+
+o comando com down no final apagar o container e todo o registro que tem nele. O comando com stop ele pausa o container. O comando up com a flag -d sobe o container destachado, o contêiner não será interrompido quando o terminal for fechado. Para concatenar os scripts podemos usar o && para
+
+```json
+{
+  "dev": "npm run services:up && next dev",
+  "services:up": "docker compose -f infra/compose.yaml up -d",
+  "services:stop": "docker compose -f infra/compose.yaml stop",
+  "services:down": "docker compose -f infra/compose.yaml down"
+}
+```

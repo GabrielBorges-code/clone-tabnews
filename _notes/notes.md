@@ -275,7 +275,7 @@ Porém um código simples não é um código mal feito, coisa que fazemos quando
 
 ![ponto de equilíbrio, código](./_img/balance-code.png)
 
-Pode ser mais difícil criar algo simples pode ser mais difícil do que algo mais complexo, pois o custo mental é maior.
+Criar algo simples pode ser mais difícil do que algo mais complexo, pois o custo mental é maior.
 
 O Software deve ser modificável, criar um software com a stack "perfeita", mas que não exista documentação ou que não existam profissionais para contribuir pode ser um problema. O software precisa ser modificável no curto, médio e longo prazo. Então a principal característica de um software śer modificável:
 
@@ -529,4 +529,47 @@ o comando com down no final apagar o container e todo o registro que tem nele. O
   "services:stop": "docker compose -f infra/compose.yaml stop",
   "services:down": "docker compose -f infra/compose.yaml down"
 }
+```
+
+## 🚗 Pista Rápida: Dia 20
+
+## Endpoint "/status": ISO 8601 + Fuso + MVC + lowerCamelCase
+
+A arquitetura MVC é seperada em `Model View e Controller`. A `Controller` não serve para computar os dados, essa camada pede pra model essa informação, a `Model` computa o dado ou a regra de negócio e devolve para a `Controller` que por fim ela devolve para `View` para o client poder consumir o dado.
+
+A Controller coordenam as operações dos Models. A Controller coordenam as operações dos Models.
+
+`Controller -> Model -> Controller -> View`
+
+Um dos motivos de não programar tudo na Controller é devido a falta de reaproveitamento de código.
+
+Dica do Filipe, para variáveis no código javascript o `lowerCamelCase` é útil, mas para o json de resposta de aplicações REST o idela é usar o `snake_case`.
+
+Sobre TDD, no exemplo de teste para a verificação de datas tentamos cobrir o máximo de cenários póssiveis, porém ainda existe a possibilidade de haver furos e tudo bem, é preciso caminhar com o software. É preciso calcular para saber se vale a pena criar os teste, porque as vezes pode ficar muito "caro" a criação de testes.
+
+```javascript
+async function status(request, response) {
+  const updatedAt = new Date().toISOString();
+
+  console.log(updatedAt);
+
+  response.status(200).json({
+    updated_at: updatedAt,
+  });
+}
+
+export default status;
+```
+
+```javascript
+test("GET to /api/v1/status should return 200", async () => {
+  const response = await fetch("http://localhost:3000/api/v1/status");
+  expect(response.status).toBe(200);
+
+  const responseBody = await response.json();
+  expect(responseBody.updated_at).toBeDefined();
+
+  const parsedUpdatedAt = new Date(responseBody.updated_at).toISOString();
+  expect(parsedUpdatedAt).toEqual(responseBody.updated_at);
+});
 ```

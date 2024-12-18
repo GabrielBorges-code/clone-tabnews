@@ -494,7 +494,7 @@ Quando eu realmente entendi o poder e a simplicidade das Variáveis de Ambiente,
 
 Qual a relação entre Variáveis de Ambiente, process, env e o que entra dentro do seu código? Vamos ver tudo isso dentro dessa aula e deixar sua aplicação 100% stateless 💪.
 
-Bizu: para não salvar códigos digitados no `bash`, basta por um espaço antes do comando que ele não fica salvo.
+Bizu: para não salvar códigos digitados no `bash`, basta por um espaço antes do comando que ele não fique salvo.
 
 ## 🚗 Pista Rápida: Dia 19
 
@@ -514,7 +514,7 @@ import database from "../../../../infra/database.js";
 
 Se queremos garantir que uma mudança de um comportamento para outro, precisamos mensurar e/ou testar os dois comportamentos e não somente o estado final.
 
-O insight que eu tive é, o teste realmente está validando a mudança que eu fiz? Se não posso está deixando um erro ou bug passar sem perceber.
+O insight que eu tive é, o teste realmente está validando a mudança que eu fiz? Se não posso, está deixando um erro ou bug passar sem perceber.
 
 `determinar as dimensões de ou ter por medida; medir.`
 
@@ -535,23 +535,21 @@ o comando com down no final apagar o container e todo o registro que tem nele. O
 
 ## Endpoint "/status": ISO 8601 + Fuso + MVC + lowerCamelCase
 
-A arquitetura MVC é seperada em `Model View e Controller`. A `Controller` não serve para computar os dados, essa camada pede pra model essa informação, a `Model` computa o dado ou a regra de negócio e devolve para a `Controller` que por fim ela devolve para `View` para o client poder consumir o dado.
+A arquitetura MVC é separada em `Model View e Controller`. A `Controller` não serve para computar os dados, essa camada pede pra model essa informação, a `Model` computa o dado ou a regra de negócio e devolve para a `Controller` que por fim ela devolve para `View` para o client poder consumir o dado.
 
-A Controller coordenam as operações dos Models. A Controller coordenam as operações dos Models.
+A Controller coordena as operações dos Models. A Controller coordena as operações dos Models.
 
 `Controller -> Model -> Controller -> View`
 
 Um dos motivos de não programar tudo na Controller é devido a falta de reaproveitamento de código.
 
-Dica do Filipe, para variáveis no código javascript o `lowerCamelCase` é útil, mas para o json de resposta de aplicações REST o idela é usar o `snake_case`.
+Dica do Filipe, para variáveis no código javascript o `lowerCamelCase` é útil, mas para o json de resposta de aplicações REST o ideal é usar o `snake_case`.
 
-Sobre TDD, no exemplo de teste para a verificação de datas tentamos cobrir o máximo de cenários póssiveis, porém ainda existe a possibilidade de haver furos e tudo bem, é preciso caminhar com o software. É preciso calcular para saber se vale a pena criar os teste, porque as vezes pode ficar muito "caro" a criação de testes.
+Sobre TDD, no exemplo de teste para a verificação de datas tentamos cobrir o máximo de cenários possíveis, porém ainda existe a possibilidade de haver furos e tudo bem, é preciso caminhar com o software. É preciso calcular para saber se vale a pena criar os testes, porque às vezes pode ficar muito "caro" a criação de testes.
 
 ```javascript
 async function status(request, response) {
   const updatedAt = new Date().toISOString();
-
-  console.log(updatedAt);
 
   response.status(200).json({
     updated_at: updatedAt,
@@ -572,4 +570,73 @@ test("GET to /api/v1/status should return 200", async () => {
   const parsedUpdatedAt = new Date(responseBody.updated_at).toISOString();
   expect(parsedUpdatedAt).toEqual(responseBody.updated_at);
 });
+```
+
+## Database "Version" (+ Red, Green e Refactor do TDD)
+
+[O ciclo de desenvolvimento do TDD](https://blog.xpeducacao.com.br/tdd-test-driven-development/)
+
+O TDD possui três ciclos bem definidos chamados de Red-Green-Refactoring ou Red-Green-Blue. Esses ciclos podem ser melhor entendidos a partir da figura abaixo:
+
+- Red
+  A primeira etapa consiste em escrever um pequeno teste que falhará. Isso acontece porque o teste está esperando por uma resposta que ainda não existe, já que o código ainda não foi criado.
+
+- Green
+  Na segunda etapa, o código já foi criado e passa por novos testes até serem aprovados. Com os testes concluídos e o código funcionando sem erros, o desenvolvedor pode passar para o próximo ciclo.
+
+  Nesse momento é importante o profissional entender bem quais são as necessidades do cliente. Assim, ele consegue desenvolver códigos que, quando agregados ao sistema, atendam às expectativas deles.
+
+- Refactor
+  Por fim, a última etapa do ciclo é a de refatoração do código. Aqui, é o momento de analisar o código que foi criado apenas para ser aprovado no ciclo Green e deixá-lo o mais simples possível.
+
+  Dessa forma, é na fase de refatoração do código que ele passa por uma limpeza onde são excluídas as duplicidades, extraídas as classes, interfaces e métodos do sistema.
+
+## Database "Opened Connections"
+
+Ao utilizar parâmetros dinâmicos dentro de uma query, estamos abrindo margem para entrar um SQL Injection. Existem 3 formas de escrever uma querys:
+
+1. Query sem parâmetro.
+   Essa forma não é passível de injeção de SQL
+
+2. Query com parâmetros fixos.
+   Essa forma também não é passível de injeção de SQL pois fica harded code as opções de seleção.
+
+3. Query com parâmetros dinâmicos.
+   Essa forma é passível de injeção de SQL, porém é a mais flexível. Esse é o tipo mais comum de querys no projeto.
+
+Ao usar a notação de `::tipoDoDado` o resultado faz um casting de tipo no resultado do banco.
+
+```sql
+-- original
+SELECT count(*) FROM pg_stat_activity WHERE datname = 'local_db';
+
+-- casting
+SELECT count(*)::int FROM pg_stat_activity WHERE datname = 'local_db';
+```
+
+## SQL Injection e Queries Parametrizadas
+
+Para evitarmos de sofrer ataques de SQL Injection devemos fazer uma query sinatization ou limpeza de consulta. Podemos fazer isso de forma `Manual`, identificando se a inserção do usuário possui algum comando como, insert, delete ou alter ou de forma Automática. Nunca fazer de forma manual, porque se você deixar passar algo a consequência pode ser devastadora.
+
+query sanitization: A limpeza de dados é o processo de limpeza, validação e garantia de que os dados de entrada do usuário sejam seguros para consumo pelo aplicativo. No contexto de ataques de injeção de consulta, a limpeza de dados impede que invasores injetem operadores mal-intencionados como {$gt: ''} nas entradas do usuário.
+
+Para fazer a limpeza utilizando o `node-postgres` devemos utilizar a notação de `$1` junto com o número, Isso deve dar um match na posição do array com as inserções que você deseja colocar no sql.
+
+```javascript
+const text = "INSERT INTO users(name, email) VALUES($1, $2) RETURNING *";
+const values = ["brianc", "brian.m.carlson@gmail.com"];
+```
+
+Uma informação importante, ao ter uma consulta corrompida o código irá lançar uma exception e a conexão com o banco não será fechada. Utilizando o node-postgres usando um bloco de try/catch com o finally para sempre executar o fechamento da conexão com o bd.
+
+```javascript
+try {
+  await client.connect();
+  const result = await client.query(queryObject);
+  return result;
+} catch (error) {
+  console.error(error);
+} finally {
+  await client.end();
+}
 ```

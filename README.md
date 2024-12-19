@@ -2,6 +2,8 @@
 
 Este projeto está sendo desenvolvido como parte do [Curso.Dev](https://curso.dev), com o objetivo de criar um clone do [Tabnews](https://www.tabnews.com.br).
 
+🌐 Confira o projeto em produção: [gabrielbmcode.com.br](https://gabrielbmcode.com.br/)
+
 ## 🏗️ Proposta
 
 A ideia é construir um sistema **robusto e completo**, enfrentando desafios reais para:

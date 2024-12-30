@@ -640,3 +640,15 @@ try {
   await client.end();
 }
 ```
+
+## 🚗 Pista Rápida: Dia 21
+
+O Dia 21 é extremamente denso e pode ser um daqueles Dias em que você sai diferente do outro lado, ainda mais numa parte extremamente importante para maioria das aplicações que é o Banco de Dados.
+
+## Investigando logs da Vercel em Produção
+
+_ClickOps_ o termo utilizado para uma pessoa de infraestrutura usando o mouse para sair clicando nos serviços, por exemplo, de banco de dados para criar manualmente os serviços de banco de dados.
+
+_IaC Infraestructure as Code_ Infraestrutura como Código usado para subir, por exemplo, uma instância de banco de dados através de Terraform para subir um banco de dados na AWS.
+
+se você faz um throw no bloco catch e retorna algo no bloco finally, o retorno no bloco finally vai sobrescrever o throw e possívelmente esconder todos os seus erros!!!

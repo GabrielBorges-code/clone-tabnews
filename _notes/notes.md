@@ -616,7 +616,7 @@ SELECT count(*)::int FROM pg_stat_activity WHERE datname = 'local_db';
 
 ## SQL Injection e Queries Parametrizadas
 
-Para evitarmos de sofrer ataques de SQL Injection devemos fazer uma query sinatization ou limpeza de consulta. Podemos fazer isso de forma `Manual`, identificando se a inserção do usuário possui algum comando como, insert, delete ou alter ou de forma Automática. Nunca fazer de forma manual, porque se você deixar passar algo a consequência pode ser devastadora.
+Para evitarmos de sofrer ataques de SQL Injection devemos fazer uma query sanitization ou limpeza de consulta. Podemos fazer isso de forma `Manual`, identificando se a inserção do usuário possui algum comando como, insert, delete ou alter ou de forma Automática. Nunca fazer de forma manual, porque se você deixar passar algo a consequência pode ser devastadora.
 
 query sanitization: A limpeza de dados é o processo de limpeza, validação e garantia de que os dados de entrada do usuário sejam seguros para consumo pelo aplicativo. No contexto de ataques de injeção de consulta, a limpeza de dados impede que invasores injetem operadores mal-intencionados como {$gt: ''} nas entradas do usuário.
 
@@ -643,7 +643,7 @@ try {
 
 ## 🚗 Pista Rápida: Dia 21
 
-O Dia 21 é extremamente denso e pode ser um daqueles Dias em que você sai diferente do outro lado, ainda mais numa parte extremamente importante para maioria das aplicações que é o Banco de Dados.
+O Dia 21 é extremamente denso e pode ser um daqueles dias em que você sai diferente do outro lado, ainda mais numa parte extremamente importante para a maioria das aplicações que é o Banco de Dados.
 
 ## Investigando logs da Vercel em Produção
 
@@ -651,4 +651,27 @@ _ClickOps_ o termo utilizado para uma pessoa de infraestrutura usando o mouse pa
 
 _IaC Infraestructure as Code_ Infraestrutura como Código usado para subir, por exemplo, uma instância de banco de dados através de Terraform para subir um banco de dados na AWS.
 
-se você faz um throw no bloco catch e retorna algo no bloco finally, o retorno no bloco finally vai sobrescrever o throw e possívelmente esconder todos os seus erros!!!
+Se você faz um throw no bloco catch e retorna algo no bloco finally, o retorno no bloco finally vai sobrescrever o throw e possivelmente esconder todos os seus erros!!!
+
+## 🚗 Pista Rápida: Dia 22
+
+Não existe profissional na nossa área, que se considere um profissional completo pelo menos, e que não sabe mexer com migrations.
+
+As migrações podem ser interpretadas como um tipo de versionamento para o banco de dados.
+
+## Por que as Migrations existem?
+
+A ideia por de trás das Database Schema Migrations é solucionar o problema de ter que fazer alterações no banco de dados de forma manual, por exemplo, fizemos uma alteração do banco de dados em um ambiente local, agora precisamos subir essa alteração ambiente de produção, para evitar de ter que escrever esse código de forma manual ou esquecer de subir ele usamos as Migrations.
+
+Ele é usado de forma consistente e imutável em qualquer tipo de ambiente. Isso deve ser versionado no código.
+
+Para fazermos isso, utilizamos os Arquivos de Migração, eles que definem a ordem que o código deve ser executado e as alterações em si. Podemos utilizar um framework de migração para ser executado 1 vez. Não se deve utilizar as migrações mais de uma vez.
+
+No projeto vamos usar o `node-pg-migrate` para fazer as migrações de banco de dados, ele é um módulo focado em fazer migrações Postgre. Existem outros libraries/frameworks que fazem esse tipo de tarefa, como o `Sequelize`, mas ele é mais flexível, diferente do `node-pg-migrate` que é mais focado.
+
+Resumidamente o que uma migration faz:
+
+1. Proibido alterações manuais.
+2. Crie um arquivo de migração.
+3. "up" para fazer alterações.
+4. "down" para desfazer alterações.

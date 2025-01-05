@@ -675,3 +675,34 @@ Resumidamente o que uma migration faz:
 2. Crie um arquivo de migração.
 3. "up" para fazer alterações.
 4. "down" para desfazer alterações.
+
+## 🚗 Pista Rápida: Dia 23
+
+## Migrations pelo endpoint “/migrations” (Dry Run)
+
+Na implementação da API de migração vai ser possível criar códigos no modo `Dry run` e `Live run`.
+
+- `Dry run`: Permite eu executar as migrações "de mentira" apenas para ver o que aconteceria caso fosse executado de verdade.
+
+- `Live run`: Quando de fato as migrações serão executadas.
+
+Na implementação o método `GET` executará o código `Dry Run` e o método `POST` executará o código `Live Run`
+
+## Por que evitar a direção "down"?
+
+Quando utilizamos o módulo `node-pg-migrate` podemos executar as migrações para frente com o `up` ou desfazendo as alterações com o `down`.
+
+Existem motivos para evitar a direção `down` (rollback), são eles:
+
+- Casos raros.
+- Levam tempo.
+- Motivação cai.
+- Testar.
+
+Eles levam mais tempo para serem escritos e podem remover dados do banco de dados. Por serem casos raros você não vai querer fazê-los se as pessoas estiverem desmotivadas talvez não vão testar de forma concreta, incluindo a falta de testes automatizados. Um exemplo que pode ocorrer é um teste automatizado apontar para um dado e o rollback (down) deletar a coluna onde estava esse dado e quebrar o teste automatizado. É melhor sempre fazer rollforward do que rollbacks.
+
+## Migrations pelo endpoint "/migrations" (Live Run - Início)
+
+Um teste de integração pode acabar mudando o state do banco de dados e isso pode ocasionar a quebra do teste. Isso ocorre porque o teste pode acabar inserindo ou modificando um dado. Uma abordagem para resolver essa situação é rodar o teste com um banco limpo, ou seja, limpar o banco antes de rodar os testes.
+
+O efeito colateral desse tipo de teste é que não podemos rodar os teste de forma paralela, porque um outro teste pode esperar algum dado de alguma tabela ou coluna e ele pode não existir no banco. Os testes nessa situação precisam ser executados de forma serial. O `Jest`, por padrão, implementa os testes de forma paralela.

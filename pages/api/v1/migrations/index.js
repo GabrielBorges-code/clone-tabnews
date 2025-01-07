@@ -14,6 +14,8 @@ export default async function migrations(request, response) {
     migrationsTable: "pgmigrations",
   };
 
+  console.log("variável de ambiente: " + process.env.NODE_ENV);
+
   if (request.method === "GET") {
     const pendingMigrations = await migrationRunner(defaultMigrationOptions);
     dbClient.end();

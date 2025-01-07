@@ -706,3 +706,9 @@ Eles levam mais tempo para serem escritos e podem remover dados do banco de dado
 Um teste de integração pode acabar mudando o state do banco de dados e isso pode ocasionar a quebra do teste. Isso ocorre porque o teste pode acabar inserindo ou modificando um dado. Uma abordagem para resolver essa situação é rodar o teste com um banco limpo, ou seja, limpar o banco antes de rodar os testes.
 
 O efeito colateral desse tipo de teste é que não podemos rodar os teste de forma paralela, porque um outro teste pode esperar algum dado de alguma tabela ou coluna e ele pode não existir no banco. Os testes nessa situação precisam ser executados de forma serial. O `Jest`, por padrão, implementa os testes de forma paralela.
+
+## 🚗 Pista Rápida: Dia 24
+
+O dia 24 pode ser fechado com a frase que o Filipe disse na aula `Expandindo testes e refatorando implementação`: Não peça permissão, peça desculpas. Isso me faz refletir sobre ter atitude de agir, de melhorar algo que eu não gosto. Isso pode ser uma via de mão dupla, pode ser assertivo, como não, mas segundo o próprio Filipe, isso acaba dando mais certo do que não dando.
+
+## 🚗 Pista Rápida: Dia 25

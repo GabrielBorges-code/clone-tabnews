@@ -22,7 +22,7 @@ async function getNewClient() {
     port: process.env.POSTGRES_PORT,
     host: process.env.POSTGRES_HOST,
     password: process.env.POSTGRES_PASSWORD,
-    ssl: process.env.NODE_ENV === "pruduction",
+    ssl: process.env.NODE_ENV === "production",
   });
 
   await client.connect();

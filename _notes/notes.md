@@ -712,3 +712,9 @@ O efeito colateral desse tipo de teste é que não podemos rodar os teste de for
 O dia 24 pode ser fechado com a frase que o Filipe disse na aula `Expandindo testes e refatorando implementação`: Não peça permissão, peça desculpas. Isso me faz refletir sobre ter atitude de agir, de melhorar algo que eu não gosto. Isso pode ser uma via de mão dupla, pode ser assertivo, como não, mas segundo o próprio Filipe, isso acaba dando mais certo do que não dando.
 
 ## 🚗 Pista Rápida: Dia 25
+
+## Grande lição + Puxão de orelha 💪
+
+Uma dica de ouro que o Filipe deu nessa aula foi sobre o `Bottom Line` que pode significar: Lucro Líquido ou Resultado Liquido. "No final das contas, é a linha que marca o resultado financeiro do periodo" é a linha que os donos mais se importam. É o que define se um projeto vai ou não continuar funcionando. Influênciar essa linha significa ganhar o jogo, resumidamente. Ter interesse em saber sobre custos e como máximixar os lucros de um projeto, saber o que é de fato importante financeiramente para ele pode ser algo que nos destaque. Saber dessa informações podem fazer a gente ter epifanias de ideias que podem impactar concretamente o resultado da empresa ou o que não é importante colocar a energia.
+
+É importante nós que somos técnicos influÊnciar a parte de negócio, porque no final das contas é ela que importa. Quando entendemos o negócio conseguimos entender como criar coisas que as pessoas querem pagar por aquilo, daí conseguimos parar de ter só discussões técnicas como foco e usamos a discussão técnica para chegarmos ao resultado do negócio.

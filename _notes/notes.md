@@ -520,7 +520,7 @@ O insight que eu tive é, o teste realmente está validando a mudança que eu fi
 
 ## Configurar scripts dos serviços
 
-o comando com down no final apagar o container e todo o registro que tem nele. O comando com stop ele pausa o container. O comando up com a flag -d sobe o container destachado, o contêiner não será interrompido quando o terminal for fechado. Para concatenar os scripts podemos usar o && para
+o comando com down no final apagar o container e todo o registro que tem nele. O comando com stop ele pausa o container. O comando up com a flag -d sobe o container destachado, o contêiner não será interrompido quando o terminal for fechado. Para concatenar os scripts podemos usar o &&.
 
 ```json
 {
@@ -537,7 +537,7 @@ o comando com down no final apagar o container e todo o registro que tem nele. O
 
 A arquitetura MVC é separada em `Model View e Controller`. A `Controller` não serve para computar os dados, essa camada pede pra model essa informação, a `Model` computa o dado ou a regra de negócio e devolve para a `Controller` que por fim ela devolve para `View` para o client poder consumir o dado.
 
-A Controller coordena as operações dos Models. A Controller coordena as operações dos Models.
+A Controller coordena as operações dos Models.
 
 `Controller -> Model -> Controller -> View`
 
@@ -717,4 +717,19 @@ O dia 24 pode ser fechado com a frase que o Filipe disse na aula `Expandindo tes
 
 Uma dica de ouro que o Filipe deu nessa aula foi sobre o `Bottom Line` que pode significar: Lucro Líquido ou Resultado Liquido. "No final das contas, é a linha que marca o resultado financeiro do periodo" é a linha que os donos mais se importam. É o que define se um projeto vai ou não continuar funcionando. Influênciar essa linha significa ganhar o jogo, resumidamente. Ter interesse em saber sobre custos e como máximixar os lucros de um projeto, saber o que é de fato importante financeiramente para ele pode ser algo que nos destaque. Saber dessa informações podem fazer a gente ter epifanias de ideias que podem impactar concretamente o resultado da empresa ou o que não é importante colocar a energia.
 
-É importante nós que somos técnicos influÊnciar a parte de negócio, porque no final das contas é ela que importa. Quando entendemos o negócio conseguimos entender como criar coisas que as pessoas querem pagar por aquilo, daí conseguimos parar de ter só discussões técnicas como foco e usamos a discussão técnica para chegarmos ao resultado do negócio.
+É importante nós que somos técnicos influênciar a parte de negócio, porque no final das contas é ela que importa. Quando entendemos o negócio conseguimos entender como criar coisas que as pessoas querem pagar por aquilo, daí conseguimos parar de ter só discussões técnicas como foco e usamos a discussão técnica para chegarmos ao resultado do negócio.
+
+## 🚗 Pista Rápida: Dia 26
+
+## Git Branch (3 níveis de compreensão)
+
+### 1º nível de compreeção de como funciona a branch
+
+Cada branch pode ser uma cópia paralela a branch principal, logo essa cópia não altera o código da branch de origem.
+
+Comandos:
+
+- `git branch` - lista as branchs que existe no repositório e informa qual estamos usando.
+- `git status` - informa a branch que estamos usando e os arquivos modificados
+- `git branch <nome-branch>` - cria uma nova branch no repositório.
+- `git checkout <nome-branch>` - muda para a branch que gostariamos de usar.

@@ -715,21 +715,41 @@ O dia 24 pode ser fechado com a frase que o Filipe disse na aula `Expandindo tes
 
 ## Grande lição + Puxão de orelha 💪
 
-Uma dica de ouro que o Filipe deu nessa aula foi sobre o `Bottom Line` que pode significar: Lucro Líquido ou Resultado Liquido. "No final das contas, é a linha que marca o resultado financeiro do periodo" é a linha que os donos mais se importam. É o que define se um projeto vai ou não continuar funcionando. Influênciar essa linha significa ganhar o jogo, resumidamente. Ter interesse em saber sobre custos e como máximixar os lucros de um projeto, saber o que é de fato importante financeiramente para ele pode ser algo que nos destaque. Saber dessa informações podem fazer a gente ter epifanias de ideias que podem impactar concretamente o resultado da empresa ou o que não é importante colocar a energia.
+Uma dica de ouro que o Filipe deu nessa aula foi sobre o `Bottom Line` que pode significar: Lucro Líquido ou Resultado Líquido. "No final das contas, é a linha que marca o resultado financeiro do período" é a linha que os donos mais se importam. É o que define se um projeto vai ou não continuar funcionando. Influenciar essa linha significa ganhar o jogo, resumidamente. Ter interesse em saber sobre custos e como maximizar os lucros de um projeto, saber o que é de fato importante financeiramente para ele pode ser algo que nos destaque. Saber dessa informação pode fazer a gente ter epifanias de ideias que podem impactar concretamente o resultado da empresa ou o que não é importante colocar a energia.
 
-É importante nós que somos técnicos influênciar a parte de negócio, porque no final das contas é ela que importa. Quando entendemos o negócio conseguimos entender como criar coisas que as pessoas querem pagar por aquilo, daí conseguimos parar de ter só discussões técnicas como foco e usamos a discussão técnica para chegarmos ao resultado do negócio.
+É importante para nós que somos técnicos influenciar a parte de negócio, porque no final das contas é ela que importa. Quando entendemos o negócio conseguimos entender como criar coisas que as pessoas querem pagar por aquilo, daí conseguimos parar de ter só discussões técnicas como foco e usamos a discussão técnica para chegarmos ao resultado do negócio.
 
 ## 🚗 Pista Rápida: Dia 26
 
 ## Git Branch (3 níveis de compreensão)
 
-### 1º nível de compreeção de como funciona a branch
+### 1º nível de compreensão de como funciona a branch
 
-Cada branch pode ser uma cópia paralela a branch principal, logo essa cópia não altera o código da branch de origem.
+Cada branch pode ser uma cópia paralela a branch principal, logo essa cópia não altera o código da branch de origem. Isso é uma meia verdade, a primeiro momento podemos entender dessa forma, porém se o projeto fosse gigantesco poderia levar minutos para alterar de uma branch para outra, o que não ocorre.
+
+### 2º nível de compreensão de como funciona a branch
+
+O git reaproveita os blobs dos arquivos para formar as linhas do tempo diferente. Porém ainda não é a definição correta, pois não saímos de uma linha do tempo para outra.
+
+![Linha do tempo git](./_img/linha-do-tempo-git.png)
+
+### 3º nível de compreensão de como funciona a branch
+
+O modelo mental dos blobs está correto, mas o git não duplica os commits entre as branchs, formando assim linhas do tempo separadas, tecnicamente as branchs é só um apontamento para um commit específico. Pode-se dizer que a branch é apenas um apelido para um commit. O HEAD aponta para a branch, que aponta para o commit. Uma analogia que pode ser feita é que a branch é como se fosse uma agulha de toca disco, onde você colocar ela no disco, vai tocar algo diferente, sendo possível só por ela em um lugar por vez.
+
+![Linha do tempo git 2](./_img/linha-do-tempo-git-2.png)
+
+## Fazendo deploy em Homologação (Staging)
+
+Homologação (Staging) na Vercel se chama Preview, que é uma pre-visualização. Um ambiente de homologação deve ser o mais próximo de um ambiente de produção, tendo as mesma caracteristicas, rodando a mesma stack, mas rodando em novo ambiente. Esse ambiente é menos utilizado então não é necessário subir máquinas com a mesma capacidade que a de Produção.
+
+Na vercel todos os commits feitos na `main` vão para produção, os demais irão para homologação, o que vai diferenciar um ambiente do outro será as variáveis de ambiente. As variáveis de ambiente de produção são as Production, já as de homologação são as Preview.
 
 Comandos:
 
-- `git branch` - lista as branchs que existe no repositório e informa qual estamos usando.
+- `git branch` - lista as branchs que existem no repositório e informa qual estamos usando.
 - `git status` - informa a branch que estamos usando e os arquivos modificados
 - `git branch <nome-branch>` - cria uma nova branch no repositório.
-- `git checkout <nome-branch>` - muda para a branch que gostariamos de usar.
+- `git checkout <nome-branch>` - muda para a branch que gostaríamos de usar, o `checkout` também é usada em outras operações.
+- `git switch <nome-branch>` - usado especificamente para mudar de branch.
+- `git rm <nome-arquivo>` - apaga o arquivo informado.

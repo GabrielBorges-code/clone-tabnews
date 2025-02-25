@@ -753,3 +753,4 @@ Comandos:
 - `git checkout <nome-branch>` - muda para a branch que gostaríamos de usar, o `checkout` também é usada em outras operações.
 - `git switch <nome-branch>` - usado especificamente para mudar de branch.
 - `git rm <nome-arquivo>` - apaga o arquivo informado.
+- `git checkout -b <nome-branch>` - cria uma branch e já altera para a nova branch.

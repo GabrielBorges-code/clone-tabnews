@@ -754,3 +754,75 @@ Comandos:
 - `git switch <nome-branch>` - usado especificamente para mudar de branch.
 - `git rm <nome-arquivo>` - apaga o arquivo informado.
 - `git checkout -b <nome-branch>` - cria uma branch e já altera para a nova branch.
+
+## 🚗 Pista Rápida: Dia 27
+
+### Como nunca mais perder código com Git? (Desafio Prova de Fogo 🔥)
+
+O comando `git reflog` registra todas ou todas referências que aconteceram no repositório. Pode ser entendido como um tipo de auditoria ou histórico de acontecimentos.
+
+### Git Merge (Fast Forward)
+
+O comando `jq` no terminal bash faz uma formatação de saídas json, o comando watch fica assistindo o comando especificado e o `-n 1` define um espaço de tempo em segundos.
+
+```bash
+watch -n 1 'curl -s https://gabrielbmcode.com.br/api/v1/status | jq'
+```
+
+## 🚗 Pista Rápida: Dia 28
+
+O Dia 28 é um dia baga, e por isso entenda que é um dia denso, que vai fazer você ficar pensando por muito tempo em certas dinâmicas perigosas da nossa área, porque o objetivo é entender sobre Continuous Integration, Continuous Delivery e Continuous Deployment, mas não só entender o que são essas coisas, isso é fácil, o objetivo principal é entender por que a gente criou essas coisas 🤝
+
+Link da apresentação
+[Agile is Dead • Pragmatic Dave Thomas • GOTO 2015](https://www.youtube.com/watch?v=a-BOSpxYJ9M)
+
+### Nascimento e "Morte" do Movimento Ágil
+
+Esta é uma aula importante para entender "de onde viemos e para onde estamos indo" na nossa área, começando pela metodologia Waterfall e como isso impulsionou o Movimento Ágil iniciado em 2001. E como nem tudo são flores, eu destaco também os desafios que tive ao longo da minha gestão no Pagar.me e como que o "abuso do Movimento Ágil" levou a uma queda na produtividade e satisfação das equipes.
+
+De qualquer forma, a parte ágil do movimento está longe de morrer e daqui para frente iremos ver o impacto que isso teve na forma que trabalhamos e iremos trabalhar por muito tempo 💪
+
+Waterfall ou Modelo de Cascada
+
+Antes do modelo ágil os sistemas eram desenvolvidos em Waterfall (Modelo de Cascada). Esse tipo de abordagem dava muito problema e era muito custoso para ser desenvolvido.
+
+![Waterfall (modelo de cascada)](./_img/water-fall.png)
+
+Manifesto agile para desenvolvimento [agile manifesto](https://agilemanifesto.org/iso/ptpt/manifesto.html)
+
+Em 2007 pensando em diminuir o tempo de entrega foi desenvolvido o termo de DevOps, onde unia a área de desenvolvimento, área de operações e também incluia a área de validação para diminuir o ciclo de feedback. A área de validação entrou para automatizar tudo que desse, daí surgiu o termo CI Continuous Integration (Integração Continua).
+
+![DevOps](./_img/devops.png)
+
+A automatização começou pelo build dos projetos, depois foi automatizada a validação através dos testes automatizados. Isso foi inovação na época.
+
+Para integrar tudo isso era usado uma ferramenta para fazer o controle de versão. Com a integração de um controle de versão também era possível fazer o CD Continuos Delivery (Entrega Continua), tudo que foi feito e validado é só apertar um botão para deployar. O intuito de automatizar ações é evitar erros humanos, o que pode ser prejudicial para um negócio.
+
+Outro termo é CD Continuous Deployment (Implantação Contínua) para implantar a automação para a produção sem intervenção humana.
+
+- Continuous Integration:
+- Continuous Delivery:
+- Continuous Deployment:
+
+### Trunk-Based Development, Feature Branch e Git Flow
+
+Uma das decisões mais geniais feitas no Git, no design do core dele, foi de que não existem branches especiais e isso deu aos desenvolvedores uma flexibilidade enorme para criar qualquer tipo de fluxo de trabalho. Dado a isso, nesta Pista Lenta irei revisitar os 3 principais fluxos, sendo que, a parte mais importante, é entender o motivo real de tanta preocupação sobre o assunto e tudo pode ser resumido em uma única palavra: entropia 🤝
+
+As três estratégias de branches mais importantes, são elas:
+
+- Trunk-based Development (Desenvolvimento Baseado em Tronco)
+- Feature Branch
+- Git Flow
+- Trunk-based Development
+
+A estratégia `Trunk-based Development` ao mesmo tempo é a mais simples e a mais sofisticada. Essa estratégia consiste em sempre integrar o código nele sem criar branchs. Começamos usando ele. Tudo até o momento foi feito na branch main e depois enviado para a main, inclusive a ramificação que fizemos veio da main e voltou para ela rapidamente.
+
+A `Feature Branch` pra cada modificação do sistema ou ajuste se cria uma branch separada se trabalha nela e depois de concluído faz um merge para a branch principal.
+
+O `Git Flow` começa a partir do main, se cria ramificações de hotfix (para correção de bugs), develop (para a validação) e feature (para o desenvolvimento de novas funcionalidades)
+
+![Git flow](./_img/git-flow.png)
+
+O `Trunk-based Development` se uma equipe commitar as coisas diretamente na main isso pode dar problema se não haver nenhum controle.
+
+No projeto vamos usar Feature Branch com o GitHub Flow.

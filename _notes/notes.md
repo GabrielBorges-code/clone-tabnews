@@ -837,3 +837,20 @@ Então quando eu estava fazendo o TabNews (tirando instalar dependências básic
 
 Link comentado no vídeo
 https://github.com/filipedeschamps/tabnews.com.br/pull/329
+
+## Estabilizar "npm test" (Paralelismo)
+
+Você está pronto para subir mais um passo na escada até chegar no CI? Ótimo, porque chegou a hora da gente atacar a tarefa: Estabilizar Testes Locais e iremos começar pela parte do Paralelismo do comando npm test, conhecimento que inlcusive pode ser utilizado para várias outras situações 💪
+
+Link para a página do concurrently no NPM
+https://www.npmjs.com/package/concurrently
+
+## Estabilizar "npm test" (Orquestrador)
+
+Chegou a hora de programar o Orquestrador e fazer um Experimento Social de verdade aqui com os alunos do curso.dev, incluindo você 😍
+
+Link do Pull Request
+Aqui está o link que eu comentei: https://github.com/filipedeschamps/clone-tabnews/pull/21
+
+Link para a página do async-retry no NPM
+https://www.npmjs.com/package/async-retry

@@ -826,3 +826,14 @@ O `Git Flow` começa a partir do main, se cria ramificações de hotfix (para co
 O `Trunk-based Development` se uma equipe commitar as coisas diretamente na main isso pode dar problema se não haver nenhum controle.
 
 No projeto vamos usar Feature Branch com o GitHub Flow.
+
+## 🚗 Pista Rápida: Dia 29
+
+## Estabilizar "npm run dev"
+
+Eu gostaria de inaugurar o Dia 29 dizendo que o meu sonho era criar um sistema em que eu subisse ele inteiro com um único comando. Eu digo isso porque, em todas as empresas que eu trabalhei, era sempre um inferninho configurar o ambiente local pra rodar um Site ou uma API.
+
+Então quando eu estava fazendo o TabNews (tirando instalar dependências básicas ou rodar o npm install pra instalar as dependências específicas do projeto) eu queria conseguir rodar o npm run dev e tudo acontecesse: Banco de Dados levantasse, Migrations rodassem, Servidor Web, Servidor de Emails, tudo abstraído dentro de um único comando... assim foi feito e agora chegou a hora de começar a fazer isso também aqui no FinTab 💪
+
+Link comentado no vídeo
+https://github.com/filipedeschamps/tabnews.com.br/pull/329

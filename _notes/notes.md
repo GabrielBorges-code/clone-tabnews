@@ -855,4 +855,8 @@ Aqui está o link que eu comentei: https://github.com/filipedeschamps/clone-tabn
 Link para a página do async-retry no NPM
 https://www.npmjs.com/package/async-retry
 
-## 🚗 Pista Rápida: Dia 30
+## 🚗 Pista Rápida: Dia 31
+
+### Configurar "Continuous Integration" (com GitHub Actions)
+
+Para configurar

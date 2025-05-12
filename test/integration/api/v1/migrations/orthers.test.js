@@ -6,10 +6,14 @@ async function cleanDatabase() {
   await database.query("drop schema public cascade; create schema public;");
 }
 
-test("Others Methods to /api/v1/migrations should return 405", async () => {
-  const response1 = await fetch("http://localhost:3000/api/v1/migrations", {
-    method: "delete",
-  });
+describe("Others Methods /api/v1/migrations", () => {
+  describe("Anonymous user", () => {
+    test("Returning error 405", async () => {
+      const response1 = await fetch("http://localhost:3000/api/v1/migrations", {
+        method: "delete",
+      });
 
-  expect(response1.status).toBe(405);
+      expect(response1.status).toBe(405);
+    });
+  });
 });

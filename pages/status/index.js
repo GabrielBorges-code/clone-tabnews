@@ -22,9 +22,13 @@ function InfomacoesServidor() {
   });
   const { dependencies } = data || {};
 
+  if (isLoading) {
+    return <div>Carregando...</div>;
+  }
+
   return (
     <>
-      {!isLoading && data && (
+      {!isLoading && dependencies && (
         <>
           <pre
             style={{
